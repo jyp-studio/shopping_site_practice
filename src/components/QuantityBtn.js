@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function QuantityBtn() {
+function QuantityBtn({productInfo}) {
     const [numInCart, setNumInCart] = useState(0);
     
     const handleAdd = () => {
@@ -14,7 +14,7 @@ function QuantityBtn() {
         <div>
             {
                 (numInCart === 0) ?
-                <button onClick={handleAdd}>加入購物車</button> :
+                <button onClick={handleAdd}>加入{productInfo.name}購物車</button> :
                 <div>
                     <button onClick={handleSub}>-</button>
                     {numInCart}件

@@ -6,7 +6,7 @@ import QuantityBtn from "./QuantityBtn";
 function Checkout() {
     const cartItem = 
     {
-        "cartItems":
+        cartItems:
         [
             {
                 "id": 5,
@@ -24,7 +24,8 @@ function Checkout() {
                 "description": "fresh carrot.",
                 "quantity": 4
             }
-        ]
+        ],
+        others:{}
     }
     const { cartItems } = cartItem; //啥意思?
     const cartEmpty = (cartItems.length <= 0) ? true : false;

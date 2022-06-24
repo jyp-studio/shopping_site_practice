@@ -21,7 +21,7 @@ function ProductList() {
                                 <img src={process.env.PUBLIC_URL + './images/' + product.image} /><br/>
                             </Link>
                             {product.description}<br/>
-                            <QuantityBtn />
+                            <QuantityBtn productInfo={product}/>
                         </div>
                     ))
                 }
