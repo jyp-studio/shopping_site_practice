@@ -1,33 +1,12 @@
 import Title from "./Title";
 import { Link } from "react-router-dom";
 import QuantityBtn from "./QuantityBtn";
+import { useContext } from "react";
+import CartContext from "./CartContext";
 
 
 function Checkout() {
-    const cartItem = 
-    {
-        cartItems:
-        [
-            {
-                "id": 5,
-                "name": "Berry",
-                "price": 10,
-                "image": "berry.jpg",
-                "description": "fresh berry.",
-                "quantity": 3
-            },
-            {
-                "id": 6,
-                "name": "Carrot",
-                "price": 5,
-                "image": "carrot.png",
-                "description": "fresh carrot.",
-                "quantity": 4
-            }
-        ],
-        others:{}
-    }
-    const { cartItems } = cartItem; //啥意思?
+    const {cartItems} = useContext(CartContext);
     const cartEmpty = (cartItems.length <= 0) ? true : false;
     const grandTotal = cartItems.reduce((total, product) => {
         return total +=  product.price * product.quantity
@@ -57,7 +36,7 @@ function Checkout() {
                                     {product.description}<br/>
                                     {product.price}<br/>
                                     購買數量: {product.quantity}<br/>
-                                    <QuantityBtn />
+                                    <QuantityBtn productInfo={product}/>
                                 </div>
                             )
                         }

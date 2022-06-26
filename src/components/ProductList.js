@@ -6,6 +6,7 @@ import QuantityBtn from "./QuantityBtn";
 
 
 function ProductList() {
+
     const [productList, setProductList] = useState(productData)
 
     return (
@@ -18,7 +19,7 @@ function ProductList() {
                             {product.name}<br/>
                             {product.price}<br/>
                             <Link to={"/product-detail/" + product.id}>
-                                <img src={process.env.PUBLIC_URL + './images/' + product.image} /><br/>
+                                <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} /><br/>
                             </Link>
                             {product.description}<br/>
                             <QuantityBtn productInfo={product}/>
