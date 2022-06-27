@@ -67,12 +67,12 @@ function QuantityBtn({productInfo}) {
         <div>
             {
                 (numInCart === 0) ?
-                <Button colorScheme='red' onClick={handleAdd}><Text>加入{productInfo.name}購物車</Text></Button> :
-                <Text>
-                    <Button colorScheme='yellow' onClick={handleSub}>-</Button>
+                <Button colorScheme='teal' onClick={handleAdd}><Text>加入{productInfo.name}購物車</Text></Button> :
+                <>
+                    <Button colorScheme='teal' onClick={handleSub}>-</Button>
                     {numInCart}件
-                    <Button colorScheme='yellow' onClick={handleAdd}>+</Button>
-                </Text>
+                    <Button colorScheme='teal' onClick={handleAdd}>+</Button>
+                </>
             }
         </div>
     )
