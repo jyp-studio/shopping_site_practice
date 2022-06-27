@@ -1,8 +1,10 @@
+import { Heading, VStack } from "@chakra-ui/react";
+
 function Title(props) {
     return (
-        <div>
-            <h1>{props.mainTitle}</h1>
-        </div>
+        <VStack  backgroundColor="pink.100">
+            <Heading>{props.mainTitle}</Heading>
+        </VStack>
     )
 }
 

@@ -1,5 +1,7 @@
 import { useState, useContext } from "react";
 import CartContext from "./CartContext";
+import { Button, Text } from "@chakra-ui/react"
+
 
 function QuantityBtn({productInfo}) {
 
@@ -65,12 +67,12 @@ function QuantityBtn({productInfo}) {
         <div>
             {
                 (numInCart === 0) ?
-                <button onClick={handleAdd}>加入{productInfo.name}購物車</button> :
-                <div>
-                    <button onClick={handleSub}>-</button>
+                <Button colorScheme='red' onClick={handleAdd}><Text>加入{productInfo.name}購物車</Text></Button> :
+                <Text>
+                    <Button colorScheme='yellow' onClick={handleSub}>-</Button>
                     {numInCart}件
-                    <button onClick={handleAdd}>+</button>
-                </div>
+                    <Button colorScheme='yellow' onClick={handleAdd}>+</Button>
+                </Text>
             }
         </div>
     )
